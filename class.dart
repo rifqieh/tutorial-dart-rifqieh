@@ -54,6 +54,13 @@ void main() {
   print(rekeningDian.getPemilik);
   print(rekeningDian.getBank);
   print(rekeningDian.getSaldo);
+  print('---------------------');
+
+  RekeningBank rekeningOwo = new RekeningBank.Owo(
+    namaPemilik: 'Owo Hardianto',
+    saldo: 200000,
+  );
+  print(rekeningOwo.getBank);
 }
 
 class RekeningBank {
@@ -86,6 +93,7 @@ class RekeningBank {
   }
 
   RekeningBank({this.namaPemilik, this.namaBank, this.saldo});
+  RekeningBank.Owo({this.namaPemilik, this.namaBank = 'OWO', this.saldo});
 
   cekSaldo() {
     print('Saldo saat ini: $saldo');
